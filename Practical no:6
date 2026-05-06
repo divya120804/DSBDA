@@ -1,0 +1,105 @@
+PRACTICAL NO:6
+import pandas as pd 
+import numpy as np
+from sklearn.model_selection import train_teast_split
+from sklearn.naive_bayes import GaussianNB
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import accuracy_score
+data=pd.read_csv(“iris.csv”)
+data.head()
+data.shape
+data.info()
+data.isnull().sum()
+X=data.iloc[:,:-1]
+y=data.iloc[:,:-1]
+print(“\nFeature Data(X):\n”,X.head())
+print(“\nTarget Data(y):\n”,y.head())
+X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.3,random_state=42)
+print(“\nNumber of Training Samples:”,len(X_train))
+print(“Number of Testing Smaples:”,len(X_test))
+model=GaussianNB()
+model.fit(X_train,y_train)
+print(“\nModel Training Completed Successfully!”)
+print(“\nActual Values:\n”,list(y_test))
+print(“\nPredicted Values:\n”,list(y_pred))
+y_pred=model.predict(X_test)
+print(“\nActual Values:\n”,list(y_test))
+print(“\nPredicted Values:\n”,list(y_pred))
+cm=confusion_matrix(y_test,y_pred)
+print(“Confusion Matrix:\n”,cm)
+labels=model.classes_
+cm_df=pd.DataFrame(cm,index=labels,columns=labels)
+print(“\nLabeled Confusion Matrix:\n”)
+print(cm_df)
+overall_accuracy=accuracy_score(y_test,y_pred)
+print(“\nOverall Accuracy=”, overall_accuracy)
+train_acc=model.score(X_tyrain,y_train)
+test_acc=model.score(X_test,y_test)
+print(“\nTraining Accuracy=”,train_acc)
+print(“Testing Accuracy=”,test_acc)
+print(“\nClassification Report:\n”)
+print(classification_report(y_test,y_pred)
+print(“\nCalculation of TP, FP, FN, TN for each Class:\n”)
+total=cm.sum()
+for i in range(len(cm)):
+       TP= cm[i][i]
+       FP=cm[:,i].sum()-TP
+       FN= cm[i,:].sum()-TP
+      TN=total-(TP+FP+FN)
+print(“For Class”,i)
+print(“TP=”,TP)
+print(“FP=”,FP)
+print(“FN=”,FN)
+print(“TN=”,TN)
+TP=cm[0][0]
+FP=cm[:,0].sum()-TP
+FN=cm[0,:].sum()-TP
+TN=cm.sum()-(TP+FP+FN)
+print(“TP:”,TP)
+print(“FP:”,FP)
+print(“FN:”,FN)
+print(“TN:”,TN)
+accuracy=(TP+TN)/(TP+TN+FP+FN)
+error_rate=1-accuracy
+precision=TP/(TP+FP)
+recall=TP/(TP+FN)
+print(“Accuracy:”, accuracy)
+print(“Error Rate:”,error_rate)
+print(“Precision:”,precision)
+print(“Recall:”,recall)
+from sklearn.metrics import Classification_report
+print(classification_report(y_test,y_pred))
+print(“\nRESULT:”)
+print(“Naïve Bayes classification successfully implemented.”)
+print(“Confusion matrix and performance metrics calculated.”)
+X=df[[‘Age’,’EstimatedSalary’]]
+Y=df[‘Purchased’]
+X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test-size=0.2,random_state=0)
+scaler=StandardScaler()
+X_train=scaler.fit.transform(X_train)
+X_test=scaler.transform(X_test
+model=LogisticRegression()
+model.fit(X_train,Y_train)
+Y_pred=model.predict(X_test)
+cm=confusion_matrix(Y_test,Y_pred)
+TN,FP,TN,TP=cm.ravel()
+print(f”True Positives(TP):{TP}”)
+print(f”False Positives( FP):{FP}”)
+print(f”True Negatives(TN):{TN}”)
+print(f”False Negatives(FN):{FN}”)
+accuracy=accuracy_score(Y_teast,Y_pred)
+error_rate=1-accuracy
+precision=precision_score(Y_test,Y_pred)
+recall=recall_score(Y_test,Y_pred)
+from sklearn.metrics import f1_score
+f1=f1_score(Y_test,Y_pred)
+print(f”Accuracy:{accuracy:.2f}”)
+print(f”Error Rate:{error_rate:.2f}”)
+print(f”Precision:{precision:.2f}”)
+print(f”Recall:{recall”.2f}”)
+print(f”F1 Score:{f1:.2f}”)
+plt.figure(figsize=(6,4))
+sns.heatmap(cm,annot=True,fmt=’d’,cmap=’Blues’,xticklabels=[‘Not Purchased’, ‘Purchased’],yticklabels=[‘Not Purchased’,’Purchased’])
+plt.xlabel(“Predicted”)
+plt.ylabel(“Actual”)
+plt.title(“Confusion Matrix”)
