@@ -1,4 +1,4 @@
-PRACTICAL NO:8
+PRACTICAL NO:8:Titanic dataset exploration & fare distribution using histogram
 import seaborn as sns
 import matplotlib.pyplot as plt
 titanic=sns.load_dataset(‘titanic’)
