@@ -1,4 +1,4 @@
-PRACTICAL NO:6
+PRACTICAL NO:6:Naive bayer classifier
 import pandas as pd 
 import numpy as np
 from sklearn.model_selection import train_teast_split
