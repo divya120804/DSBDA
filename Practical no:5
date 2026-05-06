@@ -1,4 +1,4 @@
-PRATICAL NO:5
+PRATICAL NO:5:Logistic regression
 Import numpy as np 
 import pandas  as pd
 import matplotlib.pyplot as plt
