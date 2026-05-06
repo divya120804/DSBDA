@@ -1,0 +1,58 @@
+PRACTICAL NO:9 
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.set(style=’whitegrid”)
+iris=sns.load_dataset(‘iris’)
+iris.head()
+iris.shape
+iris.colums
+iris.dtypes
+iris.isnul().sum()
+iris.describe()
+for col in iris.columns:
+      if iris[col].dtype==’object’:
+           feature_types[col]=”Nominal (Categorical)”
+      else:
+          feature_type[col]=”Numeric”
+for feature,ftype in feature_types.items():
+      print(f”{feature}->{ftype}”)
+for col in iris.columns[:-1:
+      plt.figure(figsize=(6,4))
+sns.histplot(iris[col],kde=True,bins=20)
+plt.title(f”Histogram of {col}”)
+plt.xlabel(col)
+plt.ylabel(“Frequency”)
+plt.show()
+iris.hist(figsize=(12,8))
+plt.suptitle(“Combined Histograms of Iris  Features”,fontsize=16)
+for col in iris.columns[:-1]:
+      plt.figure(figsize=(6,4))
+      sns.boxplot(y=iris[col])
+     plt.title(f”Boxplot of {col}”)
+     plt.show()
+plt.figure(figsize=(10,6))
+sns.boxplot(data=iris)
+plt.title(“Combined Boxplot of All Features”)
+plt.show()
+for col in iris.columns[:-1]:
+plt.figure(figsize=(6,4))
+sns.boxplot(x=’species”, y=col,data=iris)
+plt.title(f”{col} vs Species”)
+plt.show()
+for col in iris.columns[:-1]:
+      Q1 = iris[col].quantile(0.25)
+      Q3=iris[col].quantile(0.75)
+      IQR= Q3-Q1
+lower_bound = Q1 -1.5 +IQR
+upper_bound=Q3 +1.5+IQR
+ outliters=iris[(iris[col]<lower_bound)|(iris[col]>upper_bound)]
+   print(f”\nFeature:{col}”)
+print(f”Number of outliers:{len(outliers)}”)
+for col in iris.columns[:-1]:
+     print(f”\nFeature:{col}”)
+     print(f’Mean:{iris[col].mean():.2f}”)
+     print(f”Medain:{iris[col].median():.2f}”)
+     print(f”Standard Deviation:{iris[col].std():.2f}”)
+
