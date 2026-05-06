@@ -1,4 +1,4 @@
-PRACTICAL NO:7 
+PRACTICAL NO:7:Basic concept of text analysis(tokenization) 
 import  nltk
 nltk.download(‘punkt’)
 nltk.download(‘stopwords’)
