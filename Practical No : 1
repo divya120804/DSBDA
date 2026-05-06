@@ -1,0 +1,44 @@
+Pratical No 1:
+import pandas as pd
+import numpy as np
+df=pd.read_csv(“ ”)
+df.head()
+df.tail()
+df.shape
+df.iloc[4]
+df.isnull()
+df.describe()
+df.iloc[5:10]
+df.isnull().any()
+df.isnull().sum(axis=1)
+df.min()
+df.max()
+df.iloc()
+df.types
+from sklearn import preprocessing
+df.head()
+min_max_scaler=preprocessing.MinMaxScaler()
+x=df.iloc[:,:4]
+df.dtypes
+x=df.iloc[1:2]
+from sklearn.preprocessing  import MinMaxScaler
+x_numeric=x.select_dtypes(include=[‘int64’, ‘float64’])
+min_max_scaler=MinMaxScaler=MinMaxScaler()
+df[‘caste’].unquie()
+label_encoder=preprocessing.LabelEncoder()
+df[‘caste’]=label_encoder.fit_transform(df[‘caste’])
+df[‘caste’].unique()
+df.head()
+min_max_scaler=preprocessing.MinMaxScaler()
+x=df.iloc[:,:1]
+x_scaled=min_max_scaler.fit_transform(x)
+df_normalized=pd.DataFrame(x_scaled)
+df_normalized
+df[‘caste’].unique()
+features_df=df.drop(columns=[‘caste’])
+enc=preprocessing.OneHotEncoder()
+enc_df=pd.DataFrame(enc.fit_transform(df[[‘caste’]]).toarray())
+df_encode=features_df.join(enc_df)
+df_encode
+df_encode.rename(columns={0:’ROLL’},inplace=True)
+df_encode
