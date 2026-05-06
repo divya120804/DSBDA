@@ -1,4 +1,4 @@
-Pratical No 1:
+Pratical No 1:Introduction to Database
 import pandas as pd
 import numpy as np
 df=pd.read_csv(“ ”)
