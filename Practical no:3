@@ -1,0 +1,40 @@
+PRACTICAL NO:3
+import pandas as pd
+import numpy as np
+df=pd.read_csv(“ ”)
+df
+df.mean()
+df.loc[:,’Age’].mean()
+df.mean(axis=0,numeric_only=True)[0:4]
+df.loc[:,’Age’].median()
+df.median(axis=0,numeric_only=True)[0:4]
+df.mode()
+df.loc[:,’Age’].mode()
+df.min()
+df.loc[:,’Age’].min(skipna=False)
+df.max()
+df.loc[:,’Age’].max(skipna=False)
+df.loc[:,’Age’].std()
+df.std(axis=1,numeric_only=True)[0:4]
+df[‘Gender’].value_counts()
+df[‘Gender’].value_counts(normalize=True)*100
+df.groupby(‘Gender’).size()
+male_income=df.loc[df[‘Gender’]==’Male’,’Income’].tolist()
+male_income[:10]
+female_income=df.loc[df[‘Gender’]==’Female’,’Income’].tolist()
+female_income[:10]
+from sklearn import preprocessing enc=preprocessing.OneHotEncoder()
+enc_df=pd.DataFrame(enc.fit_transform(df[[‘Gender’]]).toarray()
+enc_df
+df_encode=df.join(enc_df) df_encode
+df=pd.read_csv(“ iris.csv”)
+df
+df.head()
+col_names=[‘sepal_length’,’sepal_wedth’,’petal_length’,’petal_width’,’species’]
+iris=pd.read_csv(“iris.csv”,header=None, names=[‘sepal_length’,’sepal_wedth’,’petal_length’,’petal_width’,’spec’])
+irisSet=(iris[‘species’]==’iris-setosa’)
+print(‘irissetosa’)
+irisVer=(iris[‘species’]==’iris-versicolor’)
+print(iris[irisSet].describe())
+print(‘iris-versicolor’)print(iris[irisVer].describe())
+irisVir=(iris[‘species’]==’iris-virginica’)
