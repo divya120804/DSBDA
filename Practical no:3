@@ -1,4 +1,4 @@
-PRACTICAL NO:3
+PRACTICAL NO:3:Sumarizing statistics
 import pandas as pd
 import numpy as np
 df=pd.read_csv(“ ”)
